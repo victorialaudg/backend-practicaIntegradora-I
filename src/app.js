@@ -6,7 +6,10 @@ import mongoose from 'mongoose'
 
 
 const app = express()
+app.use(express.json())
+app.use(express.urlencoded({extended: true}))
 
+//Config. del motor de plantillas
 app.engine('handlebars', handlebars.engine())
 app.set('views', './src/views')
 app.set('view engine', 'handlebars')
@@ -22,9 +25,9 @@ app.use('/carts', cartsRouter)
 mongoose.set('strictQuery', false)
 
 try{
-    await mongoose.connect('link en 3:18')
+    await mongoose.connect('mongodb+srv://coder:coder@backend39755.v9fwrug.mongodb.net/integradora1')
     app.listen(8080, ()=> console.log('Server Up'))
 }catch(error){
     console.log('No se puede conectar con la BD')
 }
-//3:29
+
