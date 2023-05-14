@@ -1,21 +1,32 @@
 import {Router} from 'express'
 import productModel from '../models/products.model.js'
 const router = Router()
-
+/*
 router.get('/', async (req,res)=>{
     //res.send('Listando productos...')
     const products = await productModel.find().lean().exec()
     console.log(products)
     res.render('list', {products})
+})*/
+
+router.get('/', (req,res) => (res.render('index')))
+
+router.get('/products', async(req,res) => {
+    let page = parseInt(req.query.page)
+    if(!page) page = 1
+    const result= await productModel.paginate({}, {page, limit:3, lean: true})
+    result.prevLink = result.hasPrevPage ? `/products?page=${result.prevPage}` : '' 
+    result.nextLink = result.hasNextPage ? `/products?page=${result.nextPage}` : '' 
+    console.log(result)
+    res.render('products', result)
 })
 
-router.get('/products', async(req,res)=>{
-    const result = await productModel.paginate({},{page:1, limit:5, lean: true})
-    res.render('products',result)
-})
 
 //ruta ecomerce/create
 router.get('/create', (req, res) =>{
+    res.render('create',{})
+})
+router.get('/products/create', (req, res) =>{
     res.render('create',{})
 })
 //ruta ecomerce/update
