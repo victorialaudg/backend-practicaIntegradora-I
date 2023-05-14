@@ -1,7 +1,6 @@
 {
-  "name": "practicaintegradora-i",
+  "name": "segunda-preentrega",
   "version": "1.0.0",
-  "description": "",
   "main": "src/app.js",
   "type": "module",
   "scripts": {
@@ -11,17 +10,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/victorialaudg/backend-practicaIntegradora-I.git"
+    "url": "git+https://github.com/victorialaudg/backend-segunda-preentrega.git"
   },
   "author": "Victoria Diani",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/victorialaudg/backend-practicaIntegradora-I/issues"
+    "url": "https://github.com/victorialaudg/backend-segunda-preentrega/issues"
   },
-  "homepage": "https://github.com/victorialaudg/backend-practicaIntegradora-I#readme",
+  "homepage": "https://github.com/victorialaudg/backend-segunda-preentrega#readme",
   "dependencies": {
     "express": "^4.18.2",
     "express-handlebars": "^7.0.7",
-    "mongoose": "^7.1.0"
-  }
+    "mongoose": "^7.1.1",
+    "mongoose-paginate-v2": "^1.7.1"
+  },
+  "keywords": [],
+  "description": ""
 }

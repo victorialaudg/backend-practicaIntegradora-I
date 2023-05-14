@@ -1,17 +1,18 @@
 <script>
     function updateProduct(name){
-        fetch(`http://localhost:8080/ecommerce/${name}`, {
+        fetch(`http://localhost:8080/products/${name}`, {
             method: 'put',
             body: JSON.stringify({
                 name: document.getElementById('name').value,
                 photo: document.getElementById('photo').value,
+                category: document.getElementById('category').value
                 type: document.getElementById('type').value
             }),
             headers: {
                 'Content-Type': 'application/json'
             }
         })
-        window.location.href = 'http://localhost:8080/ecommerce'
+        window.location.href = 'http://localhost:8080/products'
     }
 </script>
 

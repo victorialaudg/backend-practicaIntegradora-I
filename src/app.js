@@ -1,6 +1,6 @@
 import express from 'express'
 import handlebars from 'express-handlebars'
-import ecommerceRouter from './routes/ecommerce.router.js'
+import ecommerceRouter from './routes/products.router.js'
 import cartsRouter from './routes/carts.router.js'
 import mongoose from 'mongoose'
 
@@ -19,7 +19,7 @@ app.use(express.static('./src/public'))
 //end config. archivos estáticos
 
 app.get('/', (req, res) => res.send('Server OK!'))
-app.use('/ecommerce', ecommerceRouter)
+app.use('/products', ecommerceRouter)
 app.use('/carts', cartsRouter)
 
 mongoose.set('strictQuery', false)

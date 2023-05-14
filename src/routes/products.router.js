@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import productModel from '../models/ecommerce.model.js'
+import productModel from '../models/products.model.js'
 const router = Router()
 
 router.get('/', async (req,res)=>{
@@ -32,7 +32,7 @@ router.post('/', async (req, res) => {
     const productNew= req.body
     const productGenerated = new productModel(productNew)
     await productGenerated.save()
-    res.redirect(`/ecommerce/${productGenerated.name}`)
+    res.redirect(`/products/${productGenerated.name}`)
 })
 
 router.put('/:name', async (req,res)=>{
