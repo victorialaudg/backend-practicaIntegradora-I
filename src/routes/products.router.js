@@ -22,14 +22,14 @@ router.get('/products', async(req,res) => {
 })
 
 
-//ruta ecomerce/create
+//ruta products/create
 router.get('/create', (req, res) =>{
     res.render('create',{})
 })
 router.get('/products/create', (req, res) =>{
     res.render('create',{})
 })
-//ruta ecomerce/update
+//ruta products/update
 router.get('/update/:name', async (req, res) =>{
     const name = req.params.name
     const products = await productModel.findOne({name}).lean().exec()
