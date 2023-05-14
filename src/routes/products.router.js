@@ -9,6 +9,11 @@ router.get('/', async (req,res)=>{
     res.render('list', {products})
 })
 
+router.get('/products', async(req,res)=>{
+    const result = await productModel.paginate({},{page:1, limit:5, lean: true})
+    res.render('products',result)
+})
+
 //ruta ecomerce/create
 router.get('/create', (req, res) =>{
     res.render('create',{})

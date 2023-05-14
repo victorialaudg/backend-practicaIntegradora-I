@@ -4,6 +4,8 @@ import ecommerceRouter from './routes/products.router.js'
 import cartsRouter from './routes/carts.router.js'
 import mongoose from 'mongoose'
 
+//const uri='mongodb+srv://coder:coder@backend39755.v9fwrug.mongodb.net/'
+
 
 const app = express()
 app.use(express.json())
